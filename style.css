@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f4f4f4;
+}
+
+.container {
+    padding: 16px;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+input,
+button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+    font-size: 16px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#daily-schedule {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#schedule-date,
+#new-lesson-date,
+#new-lesson-info {
+    padding: 8px;
+    margin: 5px;
+}
