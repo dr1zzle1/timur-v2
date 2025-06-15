@@ -1,0 +1,397 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+html {
+    font-size: calc(100vw / 480 * 10);
+}
+
+body {
+    margin: 0;
+    font-family: 'Calibri', sans-serif;
+    background: #f4f4f4;
+    height: 100%;
+    position: relative;
+}
+
+.container {
+    height: 90vh;
+}
+
+.screen {
+    display: none;
+    height: 100%;
+}
+
+.screen.active {
+    display: block;
+}
+
+input,
+button {
+    display: block;
+    width: 100%;
+}
+
+button {
+    background: #712cf9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #712cf9;
+}
+
+input {
+    border: none;
+    background: transparent;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #4a4a4a;
+    outline: none;
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #712cf9;
+    height: 10vh;
+
+    button {
+        font-size: 1.5rem;
+        background: none;
+    }
+
+    svg {
+        min-width: 3rem;
+        min-height: 3rem;
+        max-width: 3rem;
+        max-height: 3rem;
+        fill: #a5a5a5;
+    }
+
+    svg path {
+        fill: #a5a5a5;
+        stroke: #a5a5a5;
+        transition: all .2s ease;
+    }
+
+    .active svg path {
+        fill: #fff;
+        stroke: #fff;
+    }
+}
+
+#start-screen,
+#main-screen {
+    background: #cecece;
+    color: #712cf9;
+    position: relative;
+
+    img {
+        max-width: 50%;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    span {
+        font-size: 2.3rem;
+        font-weight: 600
+    }
+
+}
+
+.start-page {
+    display: flex;
+}
+
+.start-page-text {
+    padding-top: 5rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.start-page-buttons {
+    padding: 0 2rem;
+    margin-top: 20rem;
+
+    button {
+        margin-top: 1rem;
+        padding: 1.2rem;
+        font-size: 1.6rem;
+    }
+}
+
+#login-screen,
+#register-screen {
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    h2 {
+        width: 100%;
+        display: block;
+        background: #712cf9;
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    button {
+        font-size: 1.6rem;
+        padding: 1.2rem;
+    }
+}
+
+#dynamic-content {
+    h2 {
+        padding: 1rem 0.5rem;
+        display: flex;
+        background: #712cf9;
+        color: white;
+        text-align: center;
+        font-size: 2.5rem;
+        justify-content: space-between;
+    }
+
+    button {
+        width: auto;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.content {
+    padding: 1rem;
+}
+
+.student {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+
+        span:first-child {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #757575;
+        }
+
+        span:last-child {
+            font-size: 1.2rem;
+            color: #757575;
+        }
+    }
+}
+
+.avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 0.3rem solid #d5d5d5;
+    margin-top: 0.5rem;
+
+    div {
+        font-weight: 900;
+        font-size: 2rem;
+        color: #6d6d6d;
+    }
+
+    span {
+        color: #6d6d6d;
+        font-size: 1.4rem;
+    }
+}
+
+.schedule {
+    h3 {
+        font-size: 1.5rem;
+        color: #6d6d6d;
+    }
+
+    input {
+        color: #6d6d6d;
+    }
+
+    h4 {
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+        font-size: 1.5rem;
+        color: #6d6d6d;
+    }
+}
+
+
+/* Модальные окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.modal-header {
+    h3 {
+        font-size: 2rem;
+        color: #6d6d6d;
+    }
+
+    span {
+        font-size: 3rem;
+    }
+}
+
+
+.modal-body form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-body input {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.modal-body button {
+    padding: 10px;
+    background-color: #712cf9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}

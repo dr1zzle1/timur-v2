@@ -1,0 +1,9 @@
+{
+  "appId": "com.github.dr1zzle1.timurv2",
+  "appName": "Education App",
+  "webDir": "www",
+  "server": {
+    "url": "https://dr1zzle1.github.io/timur-v2/",
+    "cleartext": true
+  }
+}
